@@ -327,6 +327,9 @@ VENDORED_PHP=/app/vendor/php
 status "Bundling NGINX ${NGINX_VERSION}"
 fetch_engine_package nginx "$NGINX_VERSION" /app/vendor/nginx | indent
 
+# switching back to chh's bucket after custom nginx
+local S3_BUCKET=chh-heroku-buildpack-php
+
 status "Bundling PHP ${PHP_VERSION}"
 
 # Install libraries also on build container, so PHP doesn't wayne about missing
