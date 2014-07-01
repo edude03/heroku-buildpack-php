@@ -34,6 +34,8 @@ function fetch_package() {
 
     local checksum_url="http://${S3_BUCKET}.s3.amazonaws.com/package/${package}.md5"
     local package_url="http://${S3_BUCKET}.s3.amazonaws.com/package/${package}.tgz"
+    
+    echo "fetching checksum from $checksum_url"
     local checksum=$(curl "$checksum_url" 2> /dev/null)
     local cache_checksum=
 
