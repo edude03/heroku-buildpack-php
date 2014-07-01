@@ -324,6 +324,9 @@ VENDORED_PHP=/app/vendor/php
 
 [ ! -d "$BUILD_DIR/vendor" ] && mkdir -p "$BUILD_DIR/vendor"
 
+# hack to use my bucket for downloading NGINX
+local S3_BUCKET=melenion
+
 status "Bundling NGINX ${NGINX_VERSION}"
 fetch_engine_package nginx "$NGINX_VERSION" /app/vendor/nginx | indent
 
